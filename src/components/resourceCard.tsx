@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, {useState, useRef, useEffect, useContext, useLayoutEffect} from "react";
-import {Checkbox, Text, Box, Image} from "@chakra-ui/react";
+import { Checkbox, Text, Box, Image, Tooltip } from "@chakra-ui/react";
 import {ResourceItem} from "src/server";
 import {RounderBox, H3} from "./primitives";
 import {getDb, myCollectionTableName} from "src/util/indexDB";
@@ -120,7 +120,13 @@ const ResourceCard: React.FC<Props> = ({
                         {site.name}
                     </a>
                 </H3>
-                <Text mt="14px" fontSize="14px" color="gray.400">{site.description}</Text>
+                {
+                    (site.description && site.description.length > 100) ? 
+                    (<Tooltip label={site.description} aria-label='A tooltip'>
+                        <Text mt="14px" fontSize="14px" color="gray.400">{site.description && site.description.substr(0, 100)+'...'}</Text>
+                    </Tooltip> ): (<Text mt="14px" fontSize="14px" color="gray.400">{site.description && site.description.substr(0, 100)}
+                    </Text>)
+                }
             </Box>
             {
                 hasCollectBtn ? (

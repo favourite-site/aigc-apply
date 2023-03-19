@@ -41,7 +41,7 @@ const Sider = () => {
             backgroundColor="white"
             width="200px"
             textAlign="center"
-            paddingTop="50px"
+            paddingTop="30px"
             flexShrink={0}
             display={["none", "inline-block", "inline-block", "inline-block", "inline-block"]}
             height="calc(100vh - 210px)"

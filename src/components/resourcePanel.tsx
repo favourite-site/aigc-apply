@@ -37,6 +37,8 @@ const ResourcePanel: React.FC<PropsWithChildren<Props>> = ({
             <H2
                 fontSize="16px"
                 mb="15px"
+                pt="30px"
+                mt="-30px"
                 id={resource.name}
             >
                 {resource.name}

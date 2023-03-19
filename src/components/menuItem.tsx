@@ -35,13 +35,14 @@ const MenuItem: React.FC<Props> = ({
                 bgColor: "#f1eeff55"
             }}
         >
-            <img
+            {resource.icon==''?<Box h={8}
+                w={8}></Box>:<img
                 src={resource.icon}
                 height={20}
                 width={20}
                 alt={resource.name}
                 loading="lazy"
-            />
+            />}
             <H2
                 fontWeight="normal"
                 fontSize="14px"
